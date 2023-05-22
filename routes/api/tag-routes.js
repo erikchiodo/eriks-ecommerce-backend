@@ -5,14 +5,14 @@ const { Tag, Product, ProductTag } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
-    const getProductTags = await ProductTag.findAll({
+    const getProductTags = await Tag.findAll({
       include: [
         {
           model: Product,
           required: true,
         },
         {
-          model: Tag,
+          model: ProductTag,
           required: true,
         },
       ],
@@ -28,8 +28,13 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
       const { id } = req.params;
-      const getProductTag = await ProductTag.findByPk(id, {
-        include: [Product],
+      const getProductTag = await Tag.findByPk(id, {
+        include: [
+          {
+            model: Product,
+            required: true,
+          },
+        ],
       });
       if (getProductTag) {
         res.json(getProductTag);
@@ -44,7 +49,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-      const newProductTag = await ProductTag.create(req.body);
+      const newProductTag = await Tag.create(req.body);
       res.status(201).json(newProductTag);
     } catch (error) {
       res.status(400).json({ error: error.message });
@@ -54,7 +59,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
       const { id } = req.params;
-      const [updateProductTag] = await ProductTag.update(req.body, { where: { id } });
+      const [updateProductTag] = await Tag.update(req.body, { where: { id } });
       if (updateProductTag === 1) {
         res.json({ message: "Record updated successfully" });
       } else {
@@ -68,7 +73,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
       const { id } = req.params;
-      const deleteProductTag = await ProductTag.destroy({ where: { id } });
+      const deleteProductTag = await Tag.destroy({ where: { id } });
       if (deleteProductTag === 1) {
         res.json({ message: "Record deleted successfully" });
       } else {

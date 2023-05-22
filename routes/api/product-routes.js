@@ -10,6 +10,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Category,
+          attributes: ["id", "category_name"],
           required: true,
         },
         {
@@ -29,7 +30,17 @@ router.get('/:id', async (req, res) => {
     try {
       const { id } = req.params;
       const getProduct = await Product.findByPk(id, {
-        include: [Category, Tag],
+        include: [
+          {
+            model: Category,
+            attributes: ["id", "category_name"],
+            required: true,
+          },
+          {
+            model: Tag,
+            required: true,
+          },
+        ],
       });
       if (getProduct) {
         res.json(getProduct);
