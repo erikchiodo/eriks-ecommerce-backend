@@ -22,42 +22,64 @@ SO THAT my company can compete with other e-commerce companies
 
 ## Story
 
-> GIVEN a command-line application that accepts user input
+> GIVEN a functional Express.js API
 
-> WHEN I start the application
-> THEN I am presented with the following options: view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role
+> WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
+> THEN I am able to connect to a database using Sequelize
 
-> WHEN I choose to view all departments
-> THEN I am presented with a formatted table showing department names and department ids
+> WHEN I enter schema and seed commands
+> THEN a development database is created and is seeded with test data
 
-> WHEN I choose to view all roles
-> THEN I am presented with the job title, role id, the department that role belongs to, and the salary for that role
+> WHEN I enter the command to invoke the application
+> THEN my server is started and the Sequelize models are synced to 
+the MySQL database
 
-> WHEN I choose to view all employees
-> THEN I am presented with a formatted table showing employee data, including employee ids, first names, last names, job titles, departments, salaries, and managers that the employees report to
+> WHEN I open API GET routes in Insomnia Core for categories, products, or tags
+> THEN the data for each of these routes is displayed in a formatted JSON
 
-> WHEN I choose to add a department
-> THEN I am prompted to enter the name of the department and that department is added to the database
-
-> WHEN I choose to add a role
-> THEN I am prompted to enter the name, salary, and department for the role and that role is added to the database
-
-> WHEN I choose to add an employee
-> THEN I am prompted to enter the employee’s first name, last name, role, and manager, and that employee is added to the database
-
-> WHEN I choose to update an employee role
-> THEN I am prompted to select an employee to update and their new role and this information is updated in the database
+> WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
+> THEN I am able to successfully create, update, and delete data in my database
 
 ## Installation
 
-npm (inquirer), node, mysql2
+dotenv, express, mysql2, sequelize
 
 ## Usage
 
-Accessible via Github (see link below). Open up a new terminal and run "node index.js" to start program. You'll need to exit as program runs recursively.
+Create env file with appropriate DB_NAME ("ecommerce_db"), DB_USER ("root"), and DB_PASSWORD (not applicable in author's case, but maybe applicable in your case).
+
+Run npm install to add dependencies. 
+
+CD to db folder and run source schema.sql file (in mysql2) to create ecommerce_db. CD to seeds folder and run source index.js to seed data to tables.
+
+Run npm start to start server. Set up folder structure as you see in below snapshot.
+
+<img width="1346" alt="Screen Shot 2023-05-22 at 11 35 16 AM" src="https://github.com/erikchiodo/eriks-weather-app/assets/122952630/ca04595a-a3e7-4b35-bca8-cb478a5e5054">
+
+Tag Routes:
+> Delete Route: http://localhost:3001/api/tags/{:id}
+> Put Route: http://localhost:3001/api/tags/{:id}
+> Post Route: http://localhost:3001/api/tags
+> Get Tag by ID: http://localhost:3001/api/tags/{:id}
+> Get Tags: http://localhost:3001/api/tags
+
+Category Routes:
+> Delete Route: http://localhost:3001/api/categories/{:id}
+> Put Route: http://localhost:3001/api/categories/{:id}
+> Post Route: http://localhost:3001/api/categories
+> Get Tag by ID: http://localhost:3001/api/categories/{:id}
+> Get Tags: http://localhost:3001/api/categories
+
+Product Routes:
+> Delete Route: http://localhost:3001/api/products/{:id}
+> Put Route: http://localhost:3001/api/products/{:id}
+> Post Route: http://localhost:3001/api/products
+> Get Tag by ID: http://localhost:3001/api/products/{:id}
+> Get Tags: http://localhost:3001/api/products
+
 ## License
 
-Erik's-Employee-Tracker is licensed under [MIT](https://opensource.org/licenses/mit).
+Erik's-ECommerce-Backend is licensed under [MIT](https://opensource.org/licenses/mit).
 
 ## Contributing
 
@@ -68,12 +90,12 @@ No contributors (aside from author)
 No tests
 
 ## Screenshots
-No Screenshots -- See link at bottom for walkthrough of application
+No Screenshots
 
 ## Questions
 
-Link to [Employee Tracker Assignment](https://github.com/erikchiodo/eriks-employee-tracker)
+Link to [Employee Tracker Assignment](https://github.com/erikchiodo/eriks-ecommerce-backend)
 
-Link to [Demo](https://drive.google.com/file/d/1fMGY5W93HtbufvE7C0NSYDOa-kdjDMwq/view)
+Link to [Demo]TO PROVIDE
 
 If you need to contact me directly, here's my email: erikchiodo@gmail.com!
