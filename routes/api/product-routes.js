@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
         },
         {
           model: Tag,
-          required: true,
+          // required: true,
         }
       ]
     });
@@ -38,7 +38,7 @@ router.get('/:id', async (req, res) => {
           },
           {
             model: Tag,
-            required: true,
+            // required: true,
           },
         ],
       });
