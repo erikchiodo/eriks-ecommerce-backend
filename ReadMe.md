@@ -56,25 +56,43 @@ Run npm start to start server. Set up folder structure as you see in below snaps
 
 <img width="1346" alt="Screen Shot 2023-05-22 at 11 35 16 AM" src="https://github.com/erikchiodo/eriks-weather-app/assets/122952630/ca04595a-a3e7-4b35-bca8-cb478a5e5054">
 
-Tag Routes:
+
+## Tag Routes:
+
 > Delete Route: http://localhost:3001/api/tags/{:id}
+
 > Put Route: http://localhost:3001/api/tags/{:id}
+
 > Post Route: http://localhost:3001/api/tags
+
 > Get Tag by ID: http://localhost:3001/api/tags/{:id}
+
 > Get Tags: http://localhost:3001/api/tags
 
-Category Routes:
+
+## Category Routes:
+
 > Delete Route: http://localhost:3001/api/categories/{:id}
+
 > Put Route: http://localhost:3001/api/categories/{:id}
+
 > Post Route: http://localhost:3001/api/categories
+
 > Get Tag by ID: http://localhost:3001/api/categories/{:id}
+
 > Get Tags: http://localhost:3001/api/categories
 
-Product Routes:
+
+## Product Routes:
+
 > Delete Route: http://localhost:3001/api/products/{:id}
+
 > Put Route: http://localhost:3001/api/products/{:id}
+
 > Post Route: http://localhost:3001/api/products
+
 > Get Tag by ID: http://localhost:3001/api/products/{:id}
+
 > Get Tags: http://localhost:3001/api/products
 
 ## License
@@ -90,12 +108,12 @@ No contributors (aside from author)
 No tests
 
 ## Screenshots
-No Screenshots
+See Demo Link Below
 
 ## Questions
 
 Link to [Employee Tracker Assignment](https://github.com/erikchiodo/eriks-ecommerce-backend)
 
-Link to [Demo]TO PROVIDE
+Link to [Demo](https://drive.google.com/file/d/1fi0LPGxP-_lmI5YQ4ULduFzYliFYmZFc/view)
 
 If you need to contact me directly, here's my email: erikchiodo@gmail.com!
